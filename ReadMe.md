@@ -84,12 +84,18 @@
 - [ ] BahdanauAttention
   - 图示：<br>
   <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2608903905,1568930054&fm=26&gp=0.jpg" width = "300" height = "400"/>
+
   - 公式：<br>
     <img src="http://latex.codecogs.com/gif.latex?%5Cbegin%7Baligned%7D%20%26%20e_%7Bij%7D%3Da%28s_%7Bi-1%7D%2Ch_j%29%20%5C%5C%5B2ex%5D%20%26%20%5Calpha_%7Bij%7D%3D%5Cfrac%7B%5Cexp%28e_%7Bij%7D%29%7D%7B%5Csum_%7Bk%3D1%7D%5E%7BT_x%7D%5Cexp%20%28e_%7Bik%7D%29%7D%20%5C%5C%5B2ex%5D%20%26%20c_i%20%3D%20%5Csum_%7Bj%3D1%7D%5E%7BT_x%7D%5Calpha_%7Bij%7Dh_j%20%5Cend%7Baligned%7D"/>
+
   - 特点：注意力信息由encoder双向RNN的隐藏层与decoder前一时刻的隐藏层贡献
 - [ ] LuongAttention
   - 图示：<br>
+
   <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3103722453,2451333191&fm=15&gp=0.jpg"/>
+
   - 公式：<br>
+
     <img src="http://latex.codecogs.com/gif.latex?%5Cbegin%7Baligned%7D%20%26score%28h_t%2C%5Chat%20h_s%29%20%3D%5Cbegin%7Bcases%7Dh_t%5ET%5Chat%20h_s%20%26%20dot%20%5C%5C%5B2ex%5D%20h_t%5ETW_a%5Chat%20h_s%20%26%20general%20%5C%5C%5B2ex%5D%20v_%7B%5Calpha%7D%5ET%5Ctanh%28W_a%5Bh%5Et%3B%5Chat%20h_s%5D%29%20%26%20concat%20%5Cend%7Bcases%7D%20%5C%5C%5B2ex%5D%20%26%20%5Chat%20h_s%20--%3E%20time%20%5C%20s%20%5C%20hidden%20%5C%20layer%20%5C%20of%20%5C%20encoder%20%5C%5C%5B2ex%5D%20%26%20h_t%20--%3E%20time%20%5C%20t%20%5C%20hidden%20%5C%20layer%20%5C%20of%20%5C%20decoder%20%5C%5C%5B2ex%5D%20%26%20a_t%28s%29%3Dalign%28h_t%2C%5Chat%20h_s%29%3D%5Cfrac%7B%5Cexp%28score%28h_t%2C%5Chat%20h_s%29%29%7D%7B%5Csum_%7Bs%27%7D%28%5Cexp%28score%28h_t%2C%5Chat%20h_%7Bs%27%7D%29%29%29%7D%20%5Cend%7Baligned%7D"/>
+    
   - 特点：注意力信息由encoder的隐藏层与decoder该时刻的隐藏层贡献
