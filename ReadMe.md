@@ -76,10 +76,11 @@
 - [ ] 最终计算公式:<br>
     <img src="http://latex.codecogs.com/gif.latex?%5Cbegin%7Baligned%7D%20%26%20BLEU%20%3D%20BP%20%5Ctimes%20%5Cexp%28%5Csum_%7Bn%3D1%7D%5ENW_n%5Clog%20P_n%29%20%5C%5C%5B2ex%5D%20%26%20W_n%3D%5Cfrac%7B1%7D%7BN%7D%20%5C%20%5C%20N--%3E%20N%20%5C%20of%20%5C%20N%20%5C_Gram%20%5Cend%7Baligned%7D"/>
 ### Attention机制
-&nbsp; &nbsp; 生成每个时刻的y，都会利用到x1,x2,x3....，而不再仅仅利用最后时刻的隐藏状态向量。同时注意力机制还能使翻译器使用局部或全局信息
+&nbsp; &nbsp; 生成每个时刻的y，都会利用到x1,x2,x3....，而不再仅仅利用最后时刻的隐藏状态向量。同时注意力机制还能使翻译器使用局部或全局信息<br>
+
 - [ ] BahdanauAttention
   - 图示：<br>
-  <img src="https://file.ai100.com.cn/files/sogou-articles/original/071dfd46-8191-413c-a62b-ca93a88a1415/071dfd46-8191-413c-a62b-ca93a88a1415"/>
+  <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2608903905,1568930054&fm=26&gp=0.jpg"/>
   - 公式：<br>
     <img src="http://latex.codecogs.com/gif.latex?%5Cbegin%7Baligned%7D%20%26%20e_%7Bij%7D%3Da%28s_%7Bi-1%7D%2Ch_j%29%20%5C%5C%5B2ex%5D%20%26%20%5Calpha_%7Bij%7D%3D%5Cfrac%7B%5Cexp%28e_%7Bij%7D%29%7D%7B%5Csum_%7Bk%3D1%7D%5E%7BT_x%7D%5Cexp%20%28e_%7Bik%7D%29%7D%20%5C%5C%5B2ex%5D%20%26%20c_i%20%3D%20%5Csum_%7Bj%3D1%7D%5E%7BT_x%7D%5Calpha_%7Bij%7Dh_j%20%5Cend%7Baligned%7D"/>
   - 特点：注意力信息由encoder双向RNN的隐藏层与decoder前一时刻的隐藏层贡献
