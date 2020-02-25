@@ -71,10 +71,13 @@
 &nbsp; &nbsp; 用于评测机器翻译精度<br>
 - [ ] n-gram 概率:<br>
 <img src="http://latex.codecogs.com/gif.latex?%5Cbegin%7Baligned%7D%20%26P_n%20%3D%20%5Cfrac%7B%5Csum_i%20%5Csum_k%20%5Cmin%28h_k%28c_i%29%2C%5Cmax_%7Bj%20%5Cin%20m%7Dh_k%28s_%7Bij%7D%29%29%7D%7B%5Csum_i%5Csum_k%20%5Cmin%28h_k%28c_i%29%29%7D%20%5C%5C%5B2ex%5D%20%26%20predict%20%5C%20%5C%7Bc_1%2Cc_2%2C...c_i%2C...%5C%7D%20%5C%5C%5B2ex%5D%20%26%20k%20%5C%20%5C%20anser%20%5C%7Bs_%7B1k%7D%2Cs_%7B2k%7D%2C...%2Cs_%7Bik%7D%2C...%5C%7D%20%5C%5C%5B2ex%5D%20%26%20w_k%20--%3Ek%20%5C%20gram%20%5C%5C%5B2ex%5D%20%26%20h_k%28c_i%29%20--%3E%20count%20%5C%20of%20%5C%20w_k%20%5C%20in%20%5C%20c_i%20%5C%5C%5B2ex%5D%20%26%20h_k%28%7Bs_%7Bij%7D%7D%20%29--%3E%20count%20%5C%20of%20%5C%20w_k%20%5C%20in%20%5C%20s_j%20%5Cend%7Baligned%7D"/>
+
 - [ ] 惩罚因子:对译文长度惩罚<br>
 <img src="http://latex.codecogs.com/gif.latex?%5Cbegin%7Baligned%7D%20%26%20BP%20%3D%20%5Cbegin%7Bcases%7D1%20%26%20if%20%5C%20l_c%20%3E%20l_s%20%5C%5C%5B2ex%5D%20e%5E%7B1-%5Cfrac%7Bl_s%7D%7Bl_c%7D%7D%20%26%20if%20%5C%20l_c%20%5Cleq%20l_s%20%5Cend%7Bcases%7D%20%5C%5C%5B2ex%5D%20%26%20l_c%20--%3E%20predict%20%5C%20length%20%5C%5C%5B2ex%5D%20%26%20l_s%20--%3E%20answer%20%5C%20length%20%5Cend%7Baligned%7D"/>
+
 - [ ] 最终计算公式:<br>
     <img src="http://latex.codecogs.com/gif.latex?%5Cbegin%7Baligned%7D%20%26%20BLEU%20%3D%20BP%20%5Ctimes%20%5Cexp%28%5Csum_%7Bn%3D1%7D%5ENW_n%5Clog%20P_n%29%20%5C%5C%5B2ex%5D%20%26%20W_n%3D%5Cfrac%7B1%7D%7BN%7D%20%5C%20%5C%20N--%3E%20N%20%5C%20of%20%5C%20N%20%5C_Gram%20%5Cend%7Baligned%7D"/>
+
 ### Attention机制
 &nbsp; &nbsp; 生成每个时刻的y，都会利用到x1,x2,x3....，而不再仅仅利用最后时刻的隐藏状态向量。同时注意力机制还能使翻译器使用局部或全局信息<br>
 
